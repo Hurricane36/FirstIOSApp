@@ -10,8 +10,10 @@ import UIKit
 
 public class ColorChangeViewController: UIViewController
 {
+    private lazy var myColor : ColorTool = ColorTool()
 
-   public override func viewDidLoad() -> Void
+    @IBOutlet weak var firstButton: UIButton!
+    public override func viewDidLoad() -> Void
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,5 +26,10 @@ public class ColorChangeViewController: UIViewController
     }
 
 
+    @IBAction func colorClick(_ sender: UIButton) ->Void
+    {
+        self.view.backgroundColor = myColor.createRandomColor()
+    }
 }
+
 
